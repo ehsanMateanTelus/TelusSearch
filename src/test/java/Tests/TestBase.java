@@ -1,6 +1,7 @@
 package test.java.Tests;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -20,8 +21,8 @@ public class TestBase {
 
      //   WebDriverManager.firefoxdriver().proxy("http://198.161.14.25:8080").setup();
 
-		WebDriverManager.firefoxdriver().setup();
-		Driver = new FirefoxDriver();
+		WebDriverManager.chromedriver().setup();
+		Driver = new ChromeDriver();
 
 		Helper.log("I navigate to telus.com");
 		Helper.getUrl("https://www.telus.com");
