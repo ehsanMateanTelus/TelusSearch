@@ -28,6 +28,8 @@ public class TestBase {
 		options.addArguments("--no-sandbox");
 		options.addArguments("--disable-dev-shm-usage");
 		options.addArguments("--headless");
+		options.addArguments("start-maximized");
+
 		Driver = new ChromeDriver(options);
 
 		Helper.log("I navigate to telus.com");
