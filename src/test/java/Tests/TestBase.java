@@ -1,9 +1,6 @@
 package test.java.Tests;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
@@ -11,7 +8,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+import main.java.Utils.helper.DriverHelper;
 import main.java.Utils.helper.Helper;
 
 public class TestBase {
@@ -20,17 +17,7 @@ public class TestBase {
 	@BeforeMethod(alwaysRun = true)
 	public void beforeMethod() {
 
-     //   WebDriverManager.firefoxdriver().proxy("http://198.161.14.25:8080").setup();
-
-		WebDriverManager.chromedriver().setup();
-		
-		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--no-sandbox");
-		options.addArguments("--disable-dev-shm-usage");
-		options.addArguments("--headless");
-	    options.addArguments("--start-fullscreen");
-
-		Driver = new ChromeDriver(options);
+		DriverHelper.setupChromeDriverHeadless();
 
 		Helper.log("I navigate to telus.com");
 		Helper.getUrl("https://www.telus.com");
