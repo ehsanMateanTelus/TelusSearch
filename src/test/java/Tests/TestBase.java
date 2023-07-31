@@ -2,6 +2,7 @@ package test.java.Tests;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -22,7 +23,9 @@ public class TestBase {
      //   WebDriverManager.firefoxdriver().proxy("http://198.161.14.25:8080").setup();
 
 		WebDriverManager.chromedriver().setup();
-		Driver = new ChromeDriver();
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--headless");
+		Driver = new ChromeDriver(options);
 
 		Helper.log("I navigate to telus.com");
 		Helper.getUrl("https://www.telus.com");
