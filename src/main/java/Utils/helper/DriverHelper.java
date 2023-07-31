@@ -1,5 +1,7 @@
 package main.java.Utils.helper;
 
+import java.time.Duration;
+
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -20,6 +22,7 @@ public class DriverHelper {
 	    options.addArguments("--start-fullscreen");
 
 	    TestBase.Driver = new ChromeDriver(options);
+	    TestBase.Driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	}
 	
 	public static void setupFirefoxHeadless() {
@@ -32,6 +35,8 @@ public class DriverHelper {
 	    options.addArguments("--start-fullscreen");
 
 	    TestBase.Driver = new FirefoxDriver(options);
+	    TestBase.Driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
 	}
 	
 	public static void setupFirefox() {
@@ -41,5 +46,7 @@ public class DriverHelper {
 	    options.addArguments("--start-fullscreen");
 
 	    TestBase.Driver = new FirefoxDriver(options);
+	    TestBase.Driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
 	}
 }
