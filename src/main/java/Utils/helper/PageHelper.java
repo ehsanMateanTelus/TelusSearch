@@ -3,8 +3,10 @@ package main.java.Utils.helper;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+
 
 import test.java.Tests.TestBase;
 
@@ -27,6 +29,16 @@ public class PageHelper {
 	     element.click();
 	}
 	
+	public static void JsClick(By byValue) {
+		 WebElement element = TestBase.Driver.findElement(byValue);
+
+		JavascriptExecutor executor = getJavaScriptExecutor();
+		executor.executeScript("arguments[0].scrollIntoView(true);", element);
+		executor.executeScript("arguments[0].click();", element);
+	}	
+	  public static JavascriptExecutor getJavaScriptExecutor() {
+           return ((JavascriptExecutor) TestBase.Driver);
+       }
 
 	
 	public static void selectDropDownContains(String value, By byValue) {

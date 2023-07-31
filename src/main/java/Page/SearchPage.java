@@ -3,6 +3,7 @@ package main.java.Page;
 import org.openqa.selenium.By;
 
 import main.java.Utils.helper.Helper;
+import main.java.Utils.helper.PageHelper;
 
 public class SearchPage {
     
@@ -20,7 +21,7 @@ public class SearchPage {
      * Actions
      */
     public void searchField(String value, String searchOption) {
-    	Helper.clickElement(searchButton);
+    	PageHelper.JsClick(searchButton);
     	Helper.setField(value, searchField);
     	Helper.selectDropDownContains(searchOption, searchOptions);	
     }
