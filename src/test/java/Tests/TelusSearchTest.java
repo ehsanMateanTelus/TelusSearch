@@ -10,7 +10,7 @@ import main.java.Utils.helper.Helper;
 public class TelusSearchTest extends TestBase{
 	
 	@Test()
-	public void searchTelusTest() throws Exception {
+	public void searchTelusTest() {
 		SearchPage page = new SearchPage();
 	
 		

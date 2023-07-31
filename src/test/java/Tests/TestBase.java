@@ -18,6 +18,8 @@ public class TestBase {
 	@BeforeMethod(alwaysRun = true)
 	public void beforeMethod() {
 
+        WebDriverManager.firefoxdriver().proxy("http://198.161.14.25:8080").setup();
+
 		WebDriverManager.firefoxdriver().setup();
 		Driver = new FirefoxDriver();
 
