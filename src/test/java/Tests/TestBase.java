@@ -28,7 +28,7 @@ public class TestBase {
 		options.addArguments("--no-sandbox");
 		options.addArguments("--disable-dev-shm-usage");
 		options.addArguments("--headless");
-		options.addArguments("start-maximized");
+	    options.addArguments("--start-fullscreen");
 
 		Driver = new ChromeDriver(options);
 
